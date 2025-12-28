@@ -87,11 +87,11 @@ function loadSidebar(activePage) {
             <div class="settings-group">
                 <div class="settings-group-title">User Settings</div>
                 <a href="settings.html" class="settings-link ${activePage === 'settings' ? 'active' : ''}">Contact Info</a>
-                <a href="#" class="settings-link">My Profile</a>
-                <a href="#" class="settings-link">Profile Settings</a>
-                <a href="#" class="settings-link">Withdrawals</a>
-                <a href="#" class="settings-link">Password & Security</a>
-                <a href="#" class="settings-link">Identity Verification</a>
+                <a href="my-profile.html" class="settings-link ${activePage === 'my-profile' ? 'active' : ''}">My Profile</a>
+                <a href="profile-settings.html" class="settings-link ${activePage === 'profile-settings' ? 'active' : ''}">Profile Settings</a>
+                <a href="withdrawals.html" class="settings-link ${activePage === 'withdrawals' ? 'active' : ''}">Withdrawals</a>
+                <a href="password-security.html" class="settings-link ${activePage === 'security' ? 'active' : ''}">Password & Security</a>
+                <a href="#" class="settings-link ${activePage === 'verification' ? 'active' : ''}">Identity Verification</a>
             </div>
         `;
     }

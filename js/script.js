@@ -119,3 +119,59 @@ function toggleEdit(cardId) {
         editBtn.style.display = 'none'; // Hide pencil
     }
 }
+
+// Preview Uploaded Image in Edit Mode
+function previewProfileImage(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('editProfileImg').src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+// Save Profile Changes
+function saveProfileChanges() {
+    // Get Input Values
+    const firstName = document.getElementById('editFirstName').value;
+    const lastName = document.getElementById('editLastName').value;
+    const title = document.getElementById('editTitle').value;
+    const location = document.getElementById('editLocation').value;
+
+    // Get Image (if changed in preview)
+    const newImgSrc = document.getElementById('editProfileImg').src;
+
+    // Update View Mode Elements
+    document.getElementById('viewName').innerText = `${firstName} ${lastName}`;
+    document.getElementById('viewTitle').innerText = title;
+
+    // Only update location text, preserve the time if it was dynamic (for now we overwrite it as per simple request)
+    // To match content: "San Francisco, CA - 5:42 PM local time" -> we might just keep the time static or append it.
+    // Let's just update the location part for simplicity or overwrite the whole string.
+    document.getElementById('viewLocation').innerText = `${location} - 5:42 PM local time`;
+
+    document.getElementById('viewProfileImg').src = newImgSrc;
+
+    // Toggle back to view mode
+    toggleEdit('userProfileCard');
+
+    // Optionally alert or show success
+    // alert('Profile updated successfully!'); 
+}
+
+// Save Overview Changes
+function saveOverview() {
+    const overviewText = document.getElementById('editOverview').value;
+    document.getElementById('viewOverview').innerText = overviewText;
+    toggleEdit('overviewCard');
+}
+
+// Save Hourly Rate Changes
+function saveHourlyRate() {
+    const rate = document.getElementById('editHourlyRate').value;
+    // Format to 2 decimal places
+    const formattedRate = parseFloat(rate).toFixed(2);
+    document.getElementById('viewHourlyRate').innerText = `$${formattedRate} / hr`;
+    toggleEdit('hourlyRateCard');
+}

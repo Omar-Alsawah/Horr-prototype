@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawals - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="global-header"></div>
+    <div class="container settings-container">
+        <aside class="settings-sidebar" id="global-sidebar"></aside>
+        <main class="settings-content">
+            <h1 class="page-title">Withdrawals</h1>
+
+            <!-- Warning Card Implementation -->
+            <div class="card" style="margin-bottom: 24px; border-left: 4px solid var(--primary-color);">
+                <div class="flex items-center" style="gap: 12px;">
+                    <span style="color: var(--primary-color);">ⓘ</span>
+                    <div>
+                        <h3 style="font-size: 1rem; font-weight: 600;">Action Required: Tax Information</h3>
+                        <p style="font-size: 0.875rem; color: var(--text-muted); margin-top: 4px;">
+                            Complete your tax profile to access funds in your account.
+                        </p>
+                    </div>
+                    <div style="margin-left: auto;">
+                        <button class="btn btn-primary">Update Tax Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+                <!-- Balance Card -->
+                <div class="card">
+                    <div class="card-header flex justify-between items-center">
+                        <h2 class="card-title">Available Balance</h2>
+                        <span style="color: var(--text-muted); font-size: 1.25rem;">$</span>
+                    </div>
+                    <div style="font-size: 2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 8px;">
+                        $0.00
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-muted);">
+                        + $150.00 pending
+                    </p>
+                </div>
+
+                <!-- Schedule Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Withdrawal Schedule</h2>
+                    </div>
+                    <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 16px;">
+                        You haven't set up a schedule yet.
+                    </p>
+                    <button class="btn btn-outline" disabled style="opacity: 0.5; cursor: not-allowed;">Set
+                        Schedule</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header flex justify-between items-center">
+                    <h2 class="card-title">Withdrawal Methods</h2>
+                    <button class="btn btn-outline">Add a Method</button>
+                </div>
+                <div
+                    style="padding: 24px; text-align: center; color: var(--text-muted); background: #f5f5f5; border-radius: 4px;">
+                    You haven't set up any withdrawal methods yet.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        loadHeader();
+        loadSidebar('withdrawals');
+    </script>
+</body>
+
+</html>

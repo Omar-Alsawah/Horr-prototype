@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="global-header"></div>
+    <div class="container settings-container">
+        <aside class="settings-sidebar" id="global-sidebar"></aside>
+        <main class="settings-content">
+            <h1 class="page-title">Profile Settings</h1>
+
+            <!-- My Profile Section -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header flex justify-between items-center">
+                    <h2 class="card-title">My profile</h2>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Visibility</label>
+                    <div style="position: relative;">
+                        <select class="form-input" style="appearance: none; cursor: pointer;">
+                            <option>Public</option>
+                            <option>Private</option>
+                            <option>Horr Users Only</option>
+                        </select>
+                        <span
+                            style="position: absolute; right: 12px; top: 10px; pointer-events: none; color: #666;">▼</span>
+                    </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                    <label class="form-label">Project preference ⓘ</label>
+                    <div style="position: relative;">
+                        <select class="form-input" style="appearance: none; cursor: pointer;">
+                            <option>Both short-term and long-term projects</option>
+                            <option>Short-term projects</option>
+                            <option>Long-term projects</option>
+                        </select>
+                        <span
+                            style="position: absolute; right: 12px; top: 10px; pointer-events: none; color: #666;">▼</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Level Section (Interactive) -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header">
+                    <h2 class="card-title">Experience level</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
+                    <!-- Entry Level -->
+                    <div style="flex: 1;">
+                        <input type="radio" name="exp" id="exp1" class="hidden-radio" checked>
+                        <label for="exp1" class="radio-card-label">
+                            <span class="radio-circle"></span>
+                            <div class="radio-card-title">Entry level</div>
+                            <div class="radio-card-desc">I am relatively new to this field</div>
+                        </label>
+                    </div>
+
+                    <!-- Intermediate -->
+                    <div style="flex: 1;">
+                        <input type="radio" name="exp" id="exp2" class="hidden-radio">
+                        <label for="exp2" class="radio-card-label">
+                            <span class="radio-circle"></span>
+                            <div class="radio-card-title">Intermediate</div>
+                            <div class="radio-card-desc">I have substantial experience in this field</div>
+                        </label>
+                    </div>
+
+                    <!-- Expert -->
+                    <div style="flex: 1;">
+                        <input type="radio" name="exp" id="exp3" class="hidden-radio">
+                        <label for="exp3" class="radio-card-label">
+                            <span class="radio-circle"></span>
+                            <div class="radio-card-title">Expert</div>
+                            <div class="radio-card-desc">I have comprehensive and deep expertise in this field</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categories Section -->
+            <div class="card" style="margin-bottom: 24px;">
+                <div class="card-header flex justify-between items-center">
+                    <h2 class="card-title">Categories</h2>
+                    <span class="icon-edit">✎</span>
+                </div>
+                <div>
+                    <span class="tag">Web, Mobile & Software Dev</span>
+                    <div style="margin-top: 8px;">
+                        <span class="tag" style="background: #e0e0e0; font-size: 0.75rem;">Web Development</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Linked Accounts Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="card-title">Linked accounts</h2>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <button class="linked-account"
+                        style="background: white; width: 100%; text-align: left; color: #0077b5; border-color: #0077b5;">
+                        <span style="font-weight: 500;">+ LinkedIn</span>
+                    </button>
+                    <button class="linked-account"
+                        style="background: white; width: 100%; text-align: left; color: var(--text-muted); opacity: 0.7;">
+                        <span>+ GitHub</span>
+                    </button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        loadHeader();
+        loadSidebar('profile-settings');
+    </script>
+</body>
+
+</html>
