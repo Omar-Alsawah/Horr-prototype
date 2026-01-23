@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project - Process - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .requirement-card,
+        .step-card {
+            background: #fdfdfd;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .textarea-limited {
+            width: 100%;
+            height: 100px;
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-family: inherit;
+            resize: none;
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 0.2rem;
+        }
+
+        .sidebar-tips {
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: var(--radius-card);
+            box-shadow: var(--shadow-card);
+        }
+
+        .sidebar-tips h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-tips p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="creation-flow-wrapper animate-fade-up">
+        <div class="stepper-container animate-fade-scale delay-1">
+            <div class="stepper-line">
+                <div class="stepper-line-progress" style="width: 60%;"></div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">1</div>
+                <div class="step-label">Overview</div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">2</div>
+                <div class="step-label">Pricing</div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">3</div>
+                <div class="step-label">Gallery</div>
+            </div>
+            <div class="step-item active">
+                <div class="step-circle">4</div>
+                <div class="step-label">Process</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">5</div>
+                <div class="step-label">Description</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">6</div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+
+        <div class="animate-fade-up delay-2" style="display: grid; grid-template-columns: 7fr 3fr; gap: 2rem;">
+            <div class="main-col">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h1 class="animate-slide-right delay-3" style="font-size: 1.8rem; margin: 0;">Requirements and steps
+                    </h1>
+                    <button class="btn btn-outline animate-fade-scale delay-4" style="font-size: 0.8rem;">👁 Preview
+                        project</button>
+                </div>
+
+                <section style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Info you'll need from the client</h2>
+                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+                        Ask the client for any information or materials you need to start working on their project. The
+                        client can provide short answer responses or attach files. Add at least 1 requirement.
+                    </p>
+
+                    <div class="requirement-card">
+                        <label
+                            style="font-size: 0.85rem; color: #777; margin-bottom: 0.5rem; display: block;">Requirement</label>
+                        <textarea class="textarea-limited"></textarea>
+                        <div class="char-count">0/250 characters (min. 10)</div>
+                        <label class="checkbox-label" style="margin-top: 1rem;"><input type="checkbox"> Client needs to
+                            answer before I can start working</label>
+                    </div>
+                    <div style="color: var(--color-success); font-weight: 500; cursor: pointer;">+ Add a requirement
+                    </div>
+                </section>
+
+                <section>
+                    <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Steps you'll take to get the project done
+                    </h2>
+                    <p style="font-size: 0.9rem; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+                        Share your step-by-step process so the client will know how you'll work on their project. Add at
+                        least 1 step.
+                    </p>
+
+                    <div class="step-card">
+                        <div style="margin-bottom: 1rem;">
+                            <label style="font-size: 0.85rem; color: #777; margin-bottom: 0.5rem; display: block;">Step
+                                1 title</label>
+                            <input type="text" class="form-input">
+                            <div class="char-count">0/75 characters (min. 3)</div>
+                        </div>
+                        <div>
+                            <label
+                                style="font-size: 0.85rem; color: #777; margin-bottom: 0.5rem; display: block;">Description
+                                (optional)</label>
+                            <textarea class="textarea-limited"></textarea>
+                            <div class="char-count">0/250 characters</div>
+                        </div>
+                    </div>
+                    <div style="color: var(--color-success); font-weight: 500; cursor: pointer;">+ Add a step</div>
+                </section>
+
+                <div
+                    style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+                    <button class="btn btn-outline" onclick="window.history.back()">Back</button>
+                    <button class="btn"
+                        style="color: var(--color-text-main); border: none; background: transparent;">Save &
+                        exit</button>
+                    <button class="btn btn-success"
+                        onclick="window.location.href='create-project-description.html'">Save & Continue</button>
+                </div>
+            </div>
+
+            <aside class="sidebar-tips" style="align-self: start;">
+                <h3>Tips if you're stuck</h3>
+                <div style="margin-bottom: 2rem;">
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Requirements</h4>
+                    <p>Pretend you're meeting with the client for the first time. What information or materials would
+                        you need them to send you?</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 0.9rem; margin-bottom: 0.5rem;">Steps</h4>
+                    <p>Think of steps like your milestones or to-do list. What will you need to do to finish this
+                        project?</p>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/upload.js"></script>
+    <script>loadHeader();</script>
+</body>
+
+</html>

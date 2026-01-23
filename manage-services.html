@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Services - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .service-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-info h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .service-status {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-review {
+            background: #fff4e5;
+            color: #b7791f;
+        }
+    </style>
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="creation-flow-wrapper animate-fade-up">
+        <h1 class="page-title animate-slide-right delay-1" style="margin-top: 2rem;">Manage your services</h1>
+        <div id="service-tabs-container">
+            <div class="service-tabs">
+                <a href="#" class="service-tab active">Approved (<span id="count-approved">0</span>)</a>
+                <a href="#" class="service-tab">Under review (<span id="count-review">0</span>)</a>
+            </div>
+        </div>
+
+        <div id="services-container">
+            <!-- Empty state (default hidden) -->
+            <div id="empty-state" class="empty-state-card" style="display: none;">
+                <h2>You haven't created any services yet.</h2>
+                <a href="create-project-overview.html" class="btn btn-success">Create your first project</a>
+            </div>
+
+            <!-- Services List -->
+            <div id="service-list" class="service-list"></div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: right;">
+            <a href="create-project-overview.html" class="btn btn-success">+ Create new project</a>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/project-storage.js"></script>
+    <script>
+        loadHeader();
+
+        const services = ProjectStorage.getAllServices();
+        const container = document.getElementById('service-list');
+        const emptyState = document.getElementById('empty-state');
+        const countReview = document.getElementById('count-review');
+
+        if (services.length === 0) {
+            emptyState.style.display = 'block';
+        } else {
+            countReview.innerText = services.length;
+            services.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <div class="service-info">
+                        <h3>${service.title}</h3>
+                        <p style="color: #666; font-size: 0.9rem;">${service.category} • Created on ${service.date}</p>
+                    </div>
+                    <div class="service-status status-review">${service.status}</div>
+                `;
+                container.appendChild(card);
+            });
+        }
+    </script>
+</body>
+
+</html>

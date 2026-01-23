@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project - Pricing - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card {
+            background: #fff;
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .tier-header {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text-main);
+        }
+
+        .tier-label {
+            font-size: 0.8rem;
+            color: #777;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .tier-input-group {
+            margin-bottom: 1rem;
+        }
+
+        .tier-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .price-summary-box {
+            background: #fbfbfb;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .price-val {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .currency-toggle {
+            display: inline-flex;
+            background: #eee;
+            border-radius: 20px;
+            padding: 2px;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .toggle-btn {
+            padding: 4px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .toggle-btn.active {
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        /* Tier Options Table */
+        .tier-options-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .tier-options-table th,
+        .tier-options-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .tier-options-table th {
+            background: #fdfdfd;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .tier-options-table td:not(:first-child) {
+            text-align: center;
+            width: 15%;
+        }
+
+        .add-on-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 0.5fr;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+
+        .add-on-card {
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            background: #fff;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="creation-flow-wrapper animate-fade-up">
+        <div class="stepper-container animate-fade-scale delay-1">
+            <div class="stepper-line">
+                <div class="stepper-line-progress" style="width: 20%;"></div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">1</div>
+                <div class="step-label">Overview</div>
+            </div>
+            <div class="step-item active">
+                <div class="step-circle">2</div>
+                <div class="step-label">Pricing</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">3</div>
+                <div class="step-label">Gallery</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">4</div>
+                <div class="step-label">Process</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">5</div>
+                <div class="step-label">Description</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">6</div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+
+        <h1 class="page-title animate-slide-right delay-2">Price & scope</h1>
+        <p class="form-hint animate-slide-right delay-3" style="margin-bottom: 2rem;">Customize and price your project
+            with tiered pricing.</p>
+
+        <div class="animate-fade-scale delay-4" style="margin-bottom: 1.5rem;">
+            <label class="switch"><input type="checkbox" checked><span class="slider"></span></label>
+            <span style="font-weight: 600; margin-left: 0.5rem;">3 Tiers</span>
+        </div>
+
+        <div class="pricing-grid animate-fade-up delay-5">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="tier-header">Starter</div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Custom Title</label>
+                    <input type="text" id="project-title-starter" class="tier-input" placeholder="Title">
+                </div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Custom Description</label>
+                    <textarea class="tier-input" id="project-desc-starter"
+                        style="height: 100px; resize: none;"></textarea>
+                </div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Delivery Days</label>
+                    <select class="tier-input" id="project-days-starter">
+                        <option>3</option>
+                    </select>
+                </div>
+                <div class="price-summary-box">
+                    <div class="price-val">$100.00 / <span
+                            style="font-size: 0.9rem; font-weight: normal; color: #777;">EGP 3,135</span></div>
+                    <div class="currency-toggle">
+                        <div class="toggle-btn">USD</div>
+                        <div class="toggle-btn active">EGP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Standard -->
+            <div class="pricing-card">
+                <div class="tier-header">Standard</div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Custom Title</label>
+                    <input type="text" id="project-title-standard" class="tier-input" placeholder="Title">
+                </div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Custom Description</label>
+                    <textarea class="tier-input" id="project-desc-standard"
+                        style="height: 100px; resize: none;"></textarea>
+                </div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Delivery Days</label>
+                    <select class="tier-input" id="project-days-standard">
+                        <option>1 revision</option>
+                    </select>
+                </div>
+                <div class="price-summary-box">
+                    <div class="price-val">$200.00 / <span
+                            style="font-size: 0.9rem; font-weight: normal; color: #777;">EGP 6,270</span></div>
+                    <div class="currency-toggle">
+                        <div class="toggle-btn active">USD</div>
+                        <div class="toggle-btn">EGP</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advanced -->
+            <div class="pricing-card">
+                <div class="tier-header">Advanced</div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Custom Title</label>
+                    <input type="text" id="project-title-advanced" class="tier-input" placeholder="Title">
+                </div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Custom Description</label>
+                    <textarea class="tier-input" id="project-desc-advanced"
+                        style="height: 100px; resize: none;"></textarea>
+                </div>
+                <div class="tier-input-group">
+                    <label class="tier-label">Delivery Days</label>
+                    <select class="tier-input" id="project-days-advanced">
+                        <option>1 revision</option>
+                    </select>
+                </div>
+                <div class="price-summary-box">
+                    <div class="price-val">$300.00 / <span
+                            style="font-size: 0.9rem; font-weight: normal; color: #777;">EGP 9,405</span></div>
+                    <div class="currency-toggle">
+                        <div class="toggle-btn active">USD</div>
+                        <div class="toggle-btn">EGP</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem;">Choose add-ons (optional)</h3>
+        <table class="tier-options-table">
+            <thead>
+                <tr>
+                    <th>Service Tier Options</th>
+                    <th>Starter</th>
+                    <th>Standard</th>
+                    <th>Advanced</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Opt-in Form</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td>Autoresponder Integration</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td>Social Media Icon Integration</td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td>Responsive Design</td>
+                    <td><input type="checkbox"></td>
+                    <td><input type="checkbox" checked></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem;">Choose add-ons (optional)</h3>
+        <div class="add-on-card">
+            <div class="add-on-row">
+                <div class="tier-input-group" style="margin: 0;">
+                    <label class="tier-label">Title</label>
+                    <input type="text" class="tier-input">
+                </div>
+                <div class="tier-input-group" style="margin: 0;">
+                    <label class="tier-label">For an extra</label>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <select class="tier-input" style="width: 80px;">
+                            <option>USD</option>
+                        </select>
+                        <input type="text" class="tier-input">
+                    </div>
+                </div>
+                <div class="tier-input-group" style="margin: 0;">
+                    <label class="tier-label">Additional days</label>
+                    <select class="tier-input">
+                        <option>Select</option>
+                    </select>
+                </div>
+                <div
+                    style="color: #777; font-size: 0.8rem; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                    ❌ Remove
+                </div>
+            </div>
+            <div class="tier-input-group" style="margin-top: 1rem;">
+                <label class="tier-label">Description</label>
+                <textarea class="tier-input" style="height: 60px;"></textarea>
+            </div>
+        </div>
+
+        <div
+            style="display: flex; justify-content: flex-end; gap: 1rem; border-top: 1px solid var(--color-border); padding-top: 2rem; margin-top: 2rem;">
+            <button class="btn btn-outline" onclick="window.history.back()">Back</button>
+            <button class="btn" style="color: var(--color-text-main); border: none; background: transparent;"
+                onclick="window.location.href='manage-services.html'">Save & exit</button>
+            <button class="btn btn-success" id="save-btn">Save & Continue</button>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/project-storage.js"></script>
+    <script>
+        loadHeader();
+        const current = ProjectStorage.getCurrentProject();
+        if (current.priceStarter) document.getElementById('project-title-starter').value = current.priceStarter;
+
+        document.getElementById('save-btn').onclick = () => {
+            ProjectStorage.saveCurrentProject({
+                priceStarter: document.getElementById('project-title-starter').value
+            });
+            window.location.href = 'create-project-gallery.html';
+        };
+    </script>
+</body>
+
+</html>

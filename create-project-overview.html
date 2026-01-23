@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project - Overview - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-family: inherit;
+            background: #fff;
+        }
+
+        .form-hint {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.4rem;
+        }
+    </style>
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="creation-flow-wrapper animate-fade-up">
+        <div class="stepper-container animate-fade-scale delay-1">
+            <div class="stepper-line">
+                <div class="stepper-line-progress" style="width: 0%;"></div>
+            </div>
+            <div class="step-item active">
+                <div class="step-circle">1</div>
+                <div class="step-label">Overview</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">2</div>
+                <div class="step-label">Pricing</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">3</div>
+                <div class="step-label">Gallery</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">4</div>
+                <div class="step-label">Process</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">5</div>
+                <div class="step-label">Description</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">6</div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+
+        <h1 class="page-title animate-slide-right delay-2">Project overview</h1>
+        <div class="card project-creation-card animate-fade-up delay-3">
+            <div class="form-section">
+                <label class="form-label">Title</label>
+                <p class="form-hint">Tell the client what you will deliver and how it benefits them.</p>
+                <input type="text" id="project-title" class="form-input"
+                    placeholder="I will craft a brilliant landing page">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div class="form-section">
+                    <label class="form-label">Category</label>
+                    <p class="form-hint">Select a category for your project.</p>
+                    <select id="project-category" class="form-select">
+                        <option value="">Select a category</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Design">Design</option>
+                    </select>
+                </div>
+                <div class="form-section">
+                    <label class="form-label">Subcategory</label>
+                    <p class="form-hint">Select a secondary category that's relevant to your project.</p>
+                    <select id="project-subcategory" class="form-select">
+                        <option value="">Select a subcategory</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="UI Design">UI Design</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <label class="form-label">Project attributes <span
+                        style="font-weight: normal; color: var(--color-text-secondary);">(Optional)</span></label>
+                <p class="form-hint">Choose up to 3</p>
+                <div class="attribute-grid" id="attribute-grid">
+                    <label class="checkbox-label"><input type="checkbox" value="PHP"> PHP</label>
+                    <label class="checkbox-label"><input type="checkbox" value="HTML & CSS"> HTML & CSS</label>
+                    <label class="checkbox-label"><input type="checkbox" value="JavaScript"> JavaScript</label>
+                    <label class="checkbox-label"><input type="checkbox" value="Go"> Go</label>
+                </div>
+            </div>
+
+            <div
+                style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2rem; border-top: 1px solid var(--color-border); padding-top: 2rem;">
+                <button class="btn btn-outline" onclick="window.location.href='manage-services.html'">Save &
+                    exit</button>
+                <button class="btn btn-success" id="save-btn">Save & Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/project-storage.js"></script>
+    <script>
+        loadHeader();
+
+        const current = ProjectStorage.getCurrentProject();
+        if (current.title) document.getElementById('project-title').value = current.title;
+        if (current.category) document.getElementById('project-category').value = current.category;
+        if (current.subcategory) document.getElementById('project-subcategory').value = current.subcategory;
+
+        document.getElementById('save-btn').onclick = () => {
+            ProjectStorage.saveCurrentProject({
+                title: document.getElementById('project-title').value,
+                category: document.getElementById('project-category').value,
+                subcategory: document.getElementById('project-subcategory').value
+            });
+            window.location.href = 'create-project-pricing.html';
+        };
+    </script>
+</body>
+
+</html>

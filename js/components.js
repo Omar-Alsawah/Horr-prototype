@@ -16,7 +16,7 @@ const headerHTML = `
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
                 </a>
                 <div class="dropdown-menu">
-                    <a href="job-details.html" class="dropdown-item">Find work</a>
+                    <a href="find-work.html" class="dropdown-item">Find work</a>
                     <a href="saved-jobs.html" class="dropdown-item">Saved jobs</a>
                     <a href="#" class="dropdown-item">Proposals and offers</a>
                     <div style="border-top:1px solid #efefef; margin: 4px 0;"></div>
@@ -32,6 +32,7 @@ const headerHTML = `
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1L5 5L9 1"/></svg>
                 </a>
                 <div class="dropdown-menu">
+                    <a href="manage-services.html" class="dropdown-item">Manage Services</a>
                     <a href="#" class="dropdown-item">Your active contracts</a>
                     <a href="#" class="dropdown-item">Contract history</a>
                 </div>

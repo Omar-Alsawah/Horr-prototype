@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find work - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="container container-single-col" style="max-width: 900px;">
+        <h1 class="page-title">Find work</h1>
+        <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
+            View and manage your freelance projects that are under review or approved below.
+        </p>
+
+        <div class="search-bar-main">
+            <div class="search-input-wrapper">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#777" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" placeholder="Search for jobs">
+            </div>
+            <div class="search-filter-dropdown">
+                <span>All jobs</span>
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M1 1L5 5L9 1" />
+                </svg>
+            </div>
+            <button class="btn btn-success" style="border-radius: 0 6px 6px 0; padding: 0 2rem;">Search</button>
+        </div>
+
+        <div class="job-feed-tabs">
+            <div class="feed-tab active" data-tab="best-matches">Best matches</div>
+            <div class="feed-tab" data-tab="saved-jobs">Saved jobs</div>
+        </div>
+
+        <div id="job-feed-container">
+            <!-- Job Card 1 -->
+            <div class="job-card-v2" onclick="window.location.href='job-details.html'">
+                <div class="job-card-header">
+                    <h2 class="job-card-title">Create Responsive HTML-only Web Page from Design</h2>
+                    <button class="btn-icon-circle" onclick="event.stopPropagation(); this.classList.toggle('active')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="job-card-meta">
+                    <span>Fixed - $200</span>
+                    <span>•</span>
+                    <span>Posted yesterday</span>
+                </div>
+                <div class="job-card-description">
+                    We are seeking a competent responsive landing page based on a design we will provide based on
+                    proposals. The selected contractor will provide an HTML-only page. We are not interested in...
+                </div>
+                <div class="skills-list small-skills">
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">Web Development</span>
+                </div>
+                <div class="job-card-footer">
+                    <div class="footer-left">
+                        <span class="verified-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            Payment verified
+                        </span>
+                        <span style="color: var(--color-primary-gold);">★★★★★ (58)</span>
+                        <span>📍 United States</span>
+                    </div>
+                    <div>Proposals: 50+</div>
+                </div>
+            </div>
+
+            <!-- Job Card 2 -->
+            <div class="job-card-v2">
+                <div class="job-card-header">
+                    <h2 class="job-card-title">Implement Figma design to HTML and css</h2>
+                    <button class="btn-icon-circle" onclick="event.stopPropagation(); this.classList.toggle('active')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="job-card-meta">
+                    <span>Fixed - $150 - $300</span>
+                    <span>•</span>
+                    <span>Posted 2 hours ago</span>
+                </div>
+                <div class="job-card-description">
+                    I need someone who can convert a figma design and turn it into ui h tml and css. Being great at css
+                    is a MUST. It will be for some produced pages for a boosting website and will later...
+                </div>
+                <div class="skills-list small-skills">
+                    <span class="skill-badge">Figma</span>
+                    <span class="skill-badge">HTML</span>
+                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">JavaScript</span>
+                </div>
+                <div class="job-card-footer">
+                    <div class="footer-left">
+                        <span class="verified-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            Payment verified
+                        </span>
+                        <span style="color: var(--color-primary-gold);">★★★★★ (58)</span>
+                        <span>📍 United States</span>
+                    </div>
+                    <div>Proposals: 50+</div>
+                </div>
+            </div>
+
+            <!-- Job Card 3 -->
+            <div class="job-card-v2">
+                <div class="job-card-header">
+                    <h2 class="job-card-title">Build a no-code Realty listing website</h2>
+                    <button class="btn-icon-circle" onclick="event.stopPropagation(); this.classList.toggle('active')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="job-card-meta">
+                    <span>Hourly: $25 - $55</span>
+                    <span>•</span>
+                    <span>Posted 5 hours ago</span>
+                </div>
+                <div class="job-card-description">
+                    I am seeking an experienced developer skilled in no-code platforms to build a sleek realty listing
+                    website. The website should be a clean and user-friendly platform where property listings can be
+                    easily managed...
+                </div>
+                <div class="skills-list small-skills">
+                    <span class="skill-badge">No-Code Development</span>
+                    <span class="skill-badge">Nai Estate Websites</span>
+                    <span class="skill-badge">Bubble.io</span>
+                </div>
+                <div class="job-card-footer">
+                    <div class="footer-left">
+                        <span class="verified-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                            </svg>
+                            Payment verified
+                        </span>
+                        <span style="color: var(--color-primary-gold);">★★★★★ (58)</span>
+                        <span>📍 United States</span>
+                    </div>
+                    <div>Proposals: 50+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="load-more-container">
+            <button class="btn-load-more">Load more</button>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script>
+        loadHeader();
+
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.feed-tab');
+        const feedContainer = document.getElementById('job-feed-container');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                if (tab.dataset.tab === 'saved-jobs') {
+                    // Mock saved jobs list
+                    feedContainer.style.opacity = '0.5';
+                    setTimeout(() => {
+                        feedContainer.style.opacity = '1';
+                    }, 200);
+                } else {
+                    feedContainer.style.opacity = '0.5';
+                    setTimeout(() => {
+                        feedContainer.style.opacity = '1';
+                    }, 200);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

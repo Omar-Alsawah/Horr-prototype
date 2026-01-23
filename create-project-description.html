@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project - Description - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="creation-flow-wrapper animate-fade-up">
+        <div class="stepper-container animate-fade-scale delay-1">
+            <div class="stepper-line">
+                <div class="stepper-line-progress" style="width: 80%;"></div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">1</div>
+                <div class="step-label">Overview</div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">2</div>
+                <div class="step-label">Pricing</div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">3</div>
+                <div class="step-label">Gallery</div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">4</div>
+                <div class="step-label">Process</div>
+            </div>
+            <div class="step-item active">
+                <div class="step-circle">5</div>
+                <div class="step-label">Description</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">6</div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+
+        <h1 class="page-title animate-slide-right delay-2">Project description</h1>
+        <textarea id="project-description"
+            style="width: 100%; height: 200px; padding: 1rem; border: 1px solid var(--color-border); border-radius: 8px;"></textarea>
+
+        <div
+            style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+            <button class="btn btn-outline" onclick="window.history.back()">Back</button>
+            <button class="btn btn-success" id="submit-btn">Submit for review</button>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/project-storage.js"></script>
+    <script>
+        loadHeader();
+        const current = ProjectStorage.getCurrentProject();
+        if (current.description) document.getElementById('project-description').value = current.description;
+
+        document.getElementById('submit-btn').onclick = () => {
+            ProjectStorage.saveCurrentProject({
+                description: document.getElementById('project-description').value
+            });
+            ProjectStorage.submitProject();
+            alert('Project submitted for review!');
+            window.location.href = 'manage-services.html';
+        };
+    </script>
+</body>
+
+</html>

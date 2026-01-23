@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Project - Gallery - HORR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="light-theme-flow">
+    <div id="global-header"></div>
+
+    <div class="creation-flow-wrapper animate-fade-up">
+        <div class="stepper-container animate-fade-scale delay-1">
+            <div class="stepper-line">
+                <div class="stepper-line-progress" style="width: 40%;"></div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">1</div>
+                <div class="step-label">Overview</div>
+            </div>
+            <div class="step-item completed">
+                <div class="step-circle">2</div>
+                <div class="step-label">Pricing</div>
+            </div>
+            <div class="step-item active">
+                <div class="step-circle">3</div>
+                <div class="step-label">Gallery</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">4</div>
+                <div class="step-label">Process</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">5</div>
+                <div class="step-label">Description</div>
+            </div>
+            <div class="step-item">
+                <div class="step-circle">6</div>
+                <div class="step-label">Review</div>
+            </div>
+        </div>
+
+        <h1 class="page-title animate-slide-right delay-2">Create a project gallery</h1>
+        <p class="form-hint animate-slide-right delay-3" style="margin-bottom: 2rem;">Upload images, a video, and
+            documents to showcase your
+            project.</p>
+
+        <div class="card gallery-section">
+            <h3>Project Images</h3>
+            <p>Upload up to 15 images (.jpg or .png), up to 10MB each.</p>
+            <div class="upload-grid">
+                <div class="upload-card-wrapper">
+                    <img src="new_screens/freelancer (adding fixed service)/adding fixed service 3.png"
+                        class="image-preview" alt="Preview">
+                    <label class="checkbox-label" style="margin-top:0.5rem;"><input type="checkbox" checked> Set as
+                        project cover</label>
+                </div>
+                <div class="upload-placeholder">
+                    <div class="upload-icon">📤</div>
+                    <div>Drag image here or <span
+                            style="color: var(--color-primary-gold); font-weight: 600;">browse</span></div>
+                </div>
+                <div class="upload-placeholder" style="border-style: dotted; background: transparent;"></div>
+            </div>
+        </div>
+
+        <div class="card gallery-section">
+            <h3>Project Video</h3>
+            <p>Upload one video (mp4), up to 100MB and less than 90 seconds. We recommend a video less than 60 seconds.
+            </p>
+            <div class="upload-grid">
+                <div class="upload-placeholder">
+                    <div class="upload-icon">🎥</div>
+                    <div>Drag video here or <span
+                            style="color: var(--color-primary-gold); font-weight: 600;">browse</span></div>
+                </div>
+                <div class="upload-placeholder">
+                    <div class="upload-icon">📤</div>
+                    <div>Drag video here or <span
+                            style="color: var(--color-primary-gold); font-weight: 600;">browse</span></div>
+                </div>
+            </div>
+            <div style="margin-top: 1rem;">
+                <label class="checkbox-label"><input type="checkbox" checked> Set as project cover</label>
+            </div>
+        </div>
+
+        <div class="card gallery-section">
+            <h3>Sample Documents <span style="font-weight: normal; color: #777;">(Optional)</span></h3>
+            <p>Add up to 3 PDF files (.pdf), up to 15MB each.</p>
+            <div class="upload-grid">
+                <div class="upload-card-wrapper">
+                    <div
+                        style="background: #333; height: 180px; border-radius: 8px; color: white; padding: 1rem; font-size: 0.75rem;">
+                        <p style="font-weight: 600; font-size: 1rem; margin-bottom: 0.5rem;">Mazen Yousry</p>
+                        <p style="color: var(--color-primary-gold);">Android Developer</p>
+                        <p style="margin-top: 1rem; color: #ccc;">Sample document preview content...</p>
+                    </div>
+                    <label class="checkbox-label" style="margin-top:0.5rem;"><input type="checkbox" checked> Set as
+                        project cover</label>
+                </div>
+                <div class="upload-placeholder">
+                    <div class="upload-icon">📄</div>
+                    <div>Drag document here or <span
+                            style="color: var(--color-primary-gold); font-weight: 600;">browse</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="display: flex; justify-content: flex-end; gap: 1rem; border-top: 1px solid var(--color-border); padding-top: 2rem;">
+            <button class="btn btn-outline" onclick="window.history.back()">Back</button>
+            <button class="btn btn-outline" onclick="window.location.href='manage-services.html'">Save & exit</button>
+            <button class="btn btn-success"
+                onclick="window.location.href='create-project-process.html'">Continue</button>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/upload.js"></script>
+    <script>loadHeader();</script>
+</body>
+
+</html>
